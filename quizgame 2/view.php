@@ -77,7 +77,7 @@ if ($quizgame->intro) {
 echo $OUTPUT->heading(get_string('modulename', 'mod_quizgame'));
 
 // Game here.
-echo "<link href='https://fonts.googleapis.com/css?family=Skranji' rel='stylesheet' type='text/css'>";
+echo "<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>";
 echo $renderer->render_game($quizgame, $context);
 echo "<div class=fontloader>Loading game</div>";
 

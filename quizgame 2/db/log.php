@@ -14,12 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 /**
- * Defines the version of quizgame
+ * Definition of log events
  *
- * This code fragment is called by moodle_needs_upgrading() and
- * /admin/index.php
+ * NOTE: this is an example how to insert log event during installation/update.
+ * It is not really essential to know about it, but these logs were created as example
+ * in the previous 1.9 NEWMODULE.
  *
  * @package    mod_quizgame
  * @copyright  2014 John Okely <john@moodle.com>
@@ -28,10 +28,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2018051600;     // If version == 0 then module will not be installed.
+global $DB;
 
-$plugin->requires  = 2014051200.00;  // Requires this Moodle version (2.7)
-$plugin->cron      = 0;              // Period for cron to check this module (secs).
-$plugin->component = 'mod_quizgame'; // To check on upgrade, that module sits in correct place.
-$plugin->maturity = MATURITY_ALPHA;
-$plugin->release = 'v3.5-r1';
+$logs = array(
+    array('module' => 'quizgame', 'action' => 'add', 'mtable' => 'quizgame', 'field' => 'name'),
+    array('module' => 'quizgame', 'action' => 'update', 'mtable' => 'quizgame', 'field' => 'name'),
+    array('module' => 'quizgame', 'action' => 'view', 'mtable' => 'quizgame', 'field' => 'name'),
+    array('module' => 'quizgame', 'action' => 'view all', 'mtable' => 'quizgame', 'field' => 'name')
+);

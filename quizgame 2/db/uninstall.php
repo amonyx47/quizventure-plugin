@@ -14,12 +14,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 /**
- * Defines the version of quizgame
+ * Contains functions to be run when the module is uninstalled.
  *
- * This code fragment is called by moodle_needs_upgrading() and
- * /admin/index.php
+ * @see uninstall_plugin()
  *
  * @package    mod_quizgame
  * @copyright  2014 John Okely <john@moodle.com>
@@ -28,10 +26,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2018051600;     // If version == 0 then module will not be installed.
-
-$plugin->requires  = 2014051200.00;  // Requires this Moodle version (2.7)
-$plugin->cron      = 0;              // Period for cron to check this module (secs).
-$plugin->component = 'mod_quizgame'; // To check on upgrade, that module sits in correct place.
-$plugin->maturity = MATURITY_ALPHA;
-$plugin->release = 'v3.5-r1';
+/**
+ * Custom uninstallation procedure
+ */
+function xmldb_quizgame_uninstall() {
+    return true;
+}

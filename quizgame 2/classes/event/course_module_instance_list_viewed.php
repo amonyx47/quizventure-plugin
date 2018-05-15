@@ -14,24 +14,25 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 /**
- * Defines the version of quizgame
- *
- * This code fragment is called by moodle_needs_upgrading() and
- * /admin/index.php
+ * The mod_quizgame instance list viewed event.
  *
  * @package    mod_quizgame
- * @copyright  2014 John Okely <john@moodle.com>
+ * @copyright  2018 Stephen Bourget
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace mod_quizgame\event;
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2018051600;     // If version == 0 then module will not be installed.
+/**
+ * The mod_quizgame instance list viewed event class.
+ *
+ * @package    mod_quizgame
+ * @copyright  2018 Stephen Bourget
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class course_module_instance_list_viewed extends \core\event\course_module_instance_list_viewed {
+    // No code required here as the parent class handles it all.
+}
 
-$plugin->requires  = 2014051200.00;  // Requires this Moodle version (2.7)
-$plugin->cron      = 0;              // Period for cron to check this module (secs).
-$plugin->component = 'mod_quizgame'; // To check on upgrade, that module sits in correct place.
-$plugin->maturity = MATURITY_ALPHA;
-$plugin->release = 'v3.5-r1';
